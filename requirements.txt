@@ -1,3 +1,7 @@
 notebook
 numpy
 torch
+scikit-learn
+matplotlib
+seaborn
+pandas
