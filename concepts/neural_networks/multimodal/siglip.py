@@ -7,18 +7,26 @@ class SiGLIPVisionConfig:
 
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
-
+        
+        # Embedding Size
         self.hidden_size  = 768
+        # linear layer in feed forward network
         self.intermediate_size = 3072,
+        # Attention Heads
         self.num_attention_heads = 12,
         self.num_hidden_layers = 12,
         self.num_attention_heads = 12,
+        # Channels in the input image : 3 (RGB)
         self.num_channels = 3,
         self.image_size = 224,
         self.patch_size = 16,
-        self.layer_norm_eps = 1e-12,
+        # Layer Normalization
+        self.layer_norm_eps = 1e-6,
         # self.dropout = 0.1,
         self.attention_dropout = 0.1,
+        # Denotes the number of image tokens
+        # How many image embeddings we will get for each image
+        # (image_size / patch_size) ** 2
         self.num_img_tokens = None
 
 class SiglipVisionEmbeddings(nn.Module):
